@@ -1,27 +1,31 @@
-import java.util.HashMap;
-import java.util.Map;
-
 public class Student {
     String name;
-    int mark;
-    Student(String name,int mark){
-    this.name=name;
-    this.mark=mark;
+    int age;
+
+    public void setName(String name) {
+        this.name = name;
     }
-    class marks implements Comparable<marks>{
-        int mark;
-        @Override
-        public int compareTo(marks o){
-            return 0;
-        }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
     }
 }
-@Override
-public String toString(){
-    return super.toString();
-}
-public static void main(String[] args){
-    Map<String,Integer> map=new HashMap<>();
-    StringBuffer marks=new StringBuffer();
-    marks.append("marks:75");
+
+class Main {
+    public static void main(String[] args) {
+        Student obj = new Student();  // ✅ Correct class name
+        obj.setName("Bobby");
+        obj.setAge(19);
+
+        System.out.println("Student Name: " + obj.getName());
+        System.out.println("Student Age: " + obj.getAge());
+    }
 }
